@@ -1,8 +1,66 @@
+@import "partials/settings";
+@import "partials/foundation";
 
 
+/* test stuff */
+$sky_color:#99CCCC;
 
 
-h1{
+@mixin smally($family:"Open Sans",$size:5em,$background:#{$sky_color}){
 
-  color:#F1F1F1;
+    font-family: $family;
+    font-size: $size;
+    background:$background;
+    text-align:center;
+
 }
+
+ 
+
+.small_ones{
+
+   .title-area{
+      
+       
+       li{ 
+          color:#{$sky_color};  
+          border-bottom: 2px solid #{$sky_color};
+           // background-image:url("../images/logo.svg");
+           // background-repeat: no-repeat;
+           
+          span{ 
+             font-weight:bolder;
+             letter-spacing: 0.02em;
+             color:#{$sky_color};
+            background-image:url("../images/logo.svg");
+            background-repeat: no-repeat;
+           
+      
+    
+            }}}}
+
+
+.menu_icon{
+              background-image: url("../images/menu_icon.svg");
+              margin:0.5em 0;
+              background-repeat:no-repeat;
+              
+           
+
+
+  }
+
+  .top-bar-section .right li{
+
+    color:#{$sky_color};
+    border-bottom: 2px solid #{$sky_color};
+    padding: 0.2em 0;
+  }
+
+  .mobile-logo{
+
+    padding:0 0.3em 0.2em 1em;
+    width:3em;
+  }
+
+
