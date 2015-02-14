@@ -1,9 +1,23 @@
+@import "http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,100,700.css";
 @import "partials/settings";
 @import "partials/foundation";
 
 
 /* test stuff */
+
+$small-only: "only screen and (max-width:40em)";
+$medium-down: "only screen and (max-width:960px)";
+$medium-only: "only screen (min-width:40.063em) and (max-width:64em)";
+$medium-up : "only screen and (min-width:641px)";
+$large-only: "only screen and (min-width:64.063em)";
+
 $sky_color:#99CCCC;
+$paragraph_font:#333333;
+$button-color: #535353;
+$button-bottom-border: #333333;
+$paragraph-color: #3F4646;
+$price-bgcolor: #666666;
+
 
 
 @mixin smally($family:"Open Sans",$size:5em,$background:#{$sky_color}){
@@ -15,52 +29,159 @@ $sky_color:#99CCCC;
 
 }
 
+@mixin paragraph($color:#{$paragraph-color},$size:1.6em,$max-width:14.8em){
+
+    color: $color;
+    font-size: $size;
+    max-width: $max-width;
+    margin:0.08em 0 0 1em;
+    padding:0em 0;
+    color:#{$paragraph-color};
+    text-align:center;
+    font-family: "Open Sans";
+    font-weight:100;
+
+}
+
+
+  
  
+.row {
 
-.small_ones{
+background:#{$sky_color};
+margin: auto;
 
-   .title-area{
-      
-       
-       li{ 
-          color:#{$sky_color};  
-          border-bottom: 2px solid #{$sky_color};
-           // background-image:url("../images/logo.svg");
-           // background-repeat: no-repeat;
-           
-          span{ 
-             font-weight:bolder;
-             letter-spacing: 0.02em;
-             color:#{$sky_color};
-            background-image:url("../images/logo.svg");
-            background-repeat: no-repeat;
-           
-      
-    
-            }}}}
+.title-area{
 
+
+li{ 
+color:#{$sky_color};  
+border-bottom: 1px solid #{$sky_color};
+// background-image:url("../images/logo.svg");
+// background-repeat: no-repeat;
+
+
+span{ 
+font-weight:bolder;
+letter-spacing: 0.02em;
+color:#{$sky_color};
+background-image:url("../images/logo.svg");
+background-repeat: no-repeat;
+
+
+
+}
+}
+}
+
+.mobile-logo{
+
+@media #{$small-only}{           
+padding:0 0.3em 0.2em 1em;
+width:3em;
+}
+}
 
 .menu_icon{
-              background-image: url("../images/menu_icon.svg");
-              margin:0.5em 0;
-              background-repeat:no-repeat;
-              
-           
+
+background-image: url("../images/menu_icon.svg");
+margin:0.5em 0.5em;
+background-repeat:no-repeat;
 
 
+}
+
+.top-bar-section ul li{
+
+color:#{$sky_color};
+border-bottom: 1px solid #{$sky_color};
+padding: 0.2em 0;
+
+a{
+padding-left:1.8em;
+padding-right:0;
+color:#{$sky_color};
+
+}
+}
+
+.ship img{
+
+
+
+@media #{$small-only}{
+
+display:block;
+//background-image:url("../images/ship.svg");
+background-repeat:no-repeat;
+margin:auto;
+
+}
+
+
+}
+
+p{
+@media #{$medium-only}{
+
+@include paragraph();
+// margin:3em 1em 0 6em;
+
+}
+
+
+
+@media #{$small-only}{
+
+@include paragraph();
+// margin:0em 0 0 2em;
+}
+
+}
+
+.button{
+
+@media #{$small-only}{
+
+padding:1em 5em #{$button-med} 4em;
+display:#{$button-display};
+margin:2em; 
+background:#{$button-color};
+font-weight: 100;
+border-bottom: $button-bottom-border 5px solid;
+}
+
+@media #{$medium-only}{
+padding:1em 8em #{$button-med} 8em;
+// margin:1em 7em #{$button-margin-bottom} 8em;
+
+}
+}
+
+.row{
+  background:white;
+.to_the_moon{
+
+  background:$price-bgcolor;
+  border-radius:5px;
+  margin:2em;
+
+  h1,h3,p{
+    color:white;
+    text-align:center;
   }
 
-  .top-bar-section .right li{
+}
+}
+}
+  
 
-    color:#{$sky_color};
-    border-bottom: 2px solid #{$sky_color};
-    padding: 0.2em 0;
-  }
+  
 
-  .mobile-logo{
+  
 
-    padding:0 0.3em 0.2em 1em;
-    width:3em;
-  }
+  //  .row > .columns{
 
-
+  //   padding-left:0;
+  //   padding-right:0;
+  // }
