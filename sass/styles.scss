@@ -31,33 +31,36 @@ $footer_color:#5D5D5D;
      font-size:1.3em;
      padding:0.5em 0;
      border-bottom:1px $to-the-moon_bottom_border solid;
-
-
- // @include ay-chOne($white,center,1.3em,0.5em 0,1px $to-the-moon_bottom_border solid);
+     box-shadow:0px 1px 1.5px grey; 
+     border-radius:5px; 
+ 
 }
 
 @mixin ay-chThree(){
 
     color:$white;
-    text-align:center;
     font-size:4em;
     font-weight:100;
-    margin:0.5em 1.9em 0 1.9em;
-    padding:0 0 0 0;
+    padding:0 0em 0 0em;
+    margin:0.5em 1.1em 0 1.1em;
+    letter-spacing: 0px;
     border-bottom: 0.2em $white solid;
+
 
 }
 
-@mixin smallParagraph($pad:1.9em 0,$color:#{$white},$line-height:1.5em,$font-size:1em){
+@mixin smallParagraph($pad:2.3em,$color:#{$white},$line-height:1.5em,$font-size:1em){
             
    
     color:$color;
     line-height: $line-height;
     font-size:$font-size;
-    padding:$pad;
-    margin:auto;
-    text-align:center;
-
+    padding:$pad 0;
+  // text-align:center;
+    //margin: 0 0 0 0em;
+    
+    
+    
 
 
 }
@@ -186,11 +189,11 @@ p{
 
     padding:1em 1em #{$button-med} 0em;
     display:#{$button-display};
-    margin:2em 1.47em; 
+    margin:2em 0.2em; 
     background:#{$button-color};
     font-weight: 100;
     text-align:center;
-    border-bottom: $button-bottom-border 5px solid;
+    border-bottom: #{$button-bottom-border} 5px solid;
     }
 
     @media #{$medium-only}{
@@ -202,13 +205,14 @@ p{
 
 .row{
   background:white;
+  
   .to_the_moon{
 
-    background:$price-bgcolor;
+    background:#{$price-bgcolor};
     border-radius:5px;
-    margin:2em;
-    padding:0 0 1em 0;
-
+    margin:3em 0;
+   
+    
       h1{
         
         @include ay-chOne();
@@ -216,7 +220,7 @@ p{
         ~ h3{
              
             @include ay-chThree();
-      
+            
               ~ p{
                
                    @include smallParagraph();
@@ -240,10 +244,10 @@ p{
 
 .ufo {
 
-  font-size:0.1em;
+  font-size:0.3em;
   background:$paragraph_font;
   color:$footer_color;
-
+  
 
 }
 }
