@@ -13,30 +13,61 @@ $large-only: "only screen and (min-width:64.063em)";
 
 $sky_color:#99CCCC;
 $paragraph_font:#333333;
-$button-color: #535353;
+$button-color: #666666;
 $button-bottom-border: #333333;
 $paragraph-color: #3F4646;
 $price-bgcolor: #666666;
 $white:#FFFFFF;
 $to-the-moon_bottom_border:#555555;
+$more_deals-color:#99CCCC;
+$footer_color:#5D5D5D;
 
 
 
-@mixin smally($family:"Open Sans",$size:5em,$background:#{$sky_color}){
+@mixin ay-chOne(){
 
-    font-family: $family;
-    font-size: $size;
-    background:$background;
+     color:$white;
+     text-align:center;
+     font-size:1.3em;
+     padding:0.5em 0;
+     border-bottom:1px $to-the-moon_bottom_border solid;
+
+
+ // @include ay-chOne($white,center,1.3em,0.5em 0,1px $to-the-moon_bottom_border solid);
+}
+
+@mixin ay-chThree(){
+
+    color:$white;
     text-align:center;
+    font-size:4em;
+    font-weight:100;
+    margin:0.5em 1.9em 0 1.9em;
+    padding:0 0 0 0;
+    border-bottom: 0.2em $white solid;
 
 }
 
-@mixin paragraph($color:#{$paragraph-color},$size:1.6em,$max-width:14.8em){
+@mixin smallParagraph($pad:1.9em 0,$color:#{$white},$line-height:1.5em,$font-size:1em){
+            
+   
+    color:$color;
+    line-height: $line-height;
+    font-size:$font-size;
+    padding:$pad;
+    margin:auto;
+    text-align:center;
+
+
+
+}
+
+@mixin bigParagraph($color:#{$paragraph-color},$size:1.6em,$max-width:14.8em){
 
     color: $color;
     font-size: $size;
     max-width: $max-width;
-    margin:0.08em 0 0 1em;
+    margin:auto;
     padding:0em 0;
     color:#{$paragraph-color};
     text-align:center;
@@ -122,6 +153,8 @@ color:#{$sky_color};
 display:block;
 //background-image:url("../images/ship.svg");
 background-repeat:no-repeat;
+width:12em;
+height:12em;
 margin:auto;
 
 }
@@ -130,89 +163,94 @@ margin:auto;
 }
 
 p{
-@media #{$medium-only}{
+  @media #{$medium-only}{
 
-@include paragraph();
-// margin:3em 1em 0 6em;
+    @include bigParagraph();
+  // margin:3em 1em 0 6em;
 
-}
+  }
 
 
 
-@media #{$small-only}{
+  @media #{$small-only}{
 
-@include paragraph();
-// margin:0em 0 0 2em;
-}
+    @include bigParagraph();
+
+  }
 
 }
 
 .button{
 
-@media #{$small-only}{
+    @media #{$small-only}{
 
-padding:1em 5em #{$button-med} 4em;
-display:#{$button-display};
-margin:2em; 
-background:#{$button-color};
-font-weight: 100;
-border-bottom: $button-bottom-border 5px solid;
-}
+    padding:1em 1em #{$button-med} 0em;
+    display:#{$button-display};
+    margin:2em 1.47em; 
+    background:#{$button-color};
+    font-weight: 100;
+    text-align:center;
+    border-bottom: $button-bottom-border 5px solid;
+    }
 
-@media #{$medium-only}{
-padding:1em 8em #{$button-med} 8em;
-// margin:1em 7em #{$button-margin-bottom} 8em;
+    @media #{$medium-only}{
+    padding:1em 8em #{$button-med} 8em;
 
-}
+
+    }
 }
 
 .row{
   background:white;
-.to_the_moon{
+  .to_the_moon{
 
-  background:$price-bgcolor;
-  border-radius:5px;
-  margin:2em;
+    background:$price-bgcolor;
+    border-radius:5px;
+    margin:2em;
+    padding:0 0 1em 0;
 
-  h1{
-    color:$white;
-    text-align:center;
-    font-size:1.3em;
-    padding:0.5em 0;
-    border-bottom:1px $to-the-moon_bottom_border solid;
+      h1{
+        
+        @include ay-chOne();
+
+        ~ h3{
+             
+            @include ay-chThree();
+      
+              ~ p{
+               
+                   @include smallParagraph();
+
+                 }
+            }
+        }
+    }
+}
 
 
-  h3{
-    color:$white;
-    text-align:center;
-    font-size:4em;
-    font-weight:100;
-    margin:0 1em 0 1em;
-    padding:0.5em 0 0em 0;
-    border-bottom: 0.2em $white solid;
-  
-  p{
-    padding:5px 0 0 0;
-   // border-top: 0.2em $white solid;
-    color:$white;
-    text-align:center;
-    font-size:1em;
-       padding:0.5em 0;
-       margin:1em 0;
+.more_deal{
 
-  }
+  background:$more_deals-color;
+  text-align:center;
+  color:$white;
+  font-size:2em;
+  font-weight:600;
+   padding:0.5em 0 0 0;
+}
+
+.ufo {
+
+  font-size:0.1em;
+  background:$paragraph_font;
+  color:$footer_color;
+
+
 }
 }
-}
-}
   
 
   
 
   
 
-  //  .row > .columns{
-
-  //   padding-left:0;
-  //   padding-right:0;
-  // }
+ 
