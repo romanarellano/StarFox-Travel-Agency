@@ -1,260 +1,482 @@
-@import "http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,100,700.css";
+
+
 @import "partials/settings";
 @import "partials/foundation";
+$skyBlue: #94C9C8;
+$dark_gray: #2C2C2C;
+$price_tags:#666666;
+$dark-border:#434343;
 
-
-/* test stuff */
-
-$small-only: "only screen and (max-width:40em)";
-$medium-down: "only screen and (max-width:960px)";
-$medium-only: "only screen (min-width:40.063em) and (max-width:64em)";
-$medium-up : "only screen and (min-width:641px)";
-$large-only: "only screen and (min-width:64.063em)";
-
-$sky_color:#99CCCC;
-$paragraph_font:#333333;
-$button-color: #666666;
-$button-bottom-border: #333333;
-$paragraph-color: #3F4646;
-$price-bgcolor: #666666;
-$white:#FFFFFF;
-$to-the-moon_bottom_border:#555555;
-$more_deals-color:#99CCCC;
-$footer_color:#5D5D5D;
-
-
-
-@mixin ay-chOne(){
-
-     color:$white;
-     text-align:center;
-     font-size:1.3em;
-     padding:0.5em 0;
-     border-bottom:1px $to-the-moon_bottom_border solid;
-     box-shadow:0px 1px 1.5px grey; 
-     border-radius:5px; 
- 
+@mixin font_creator($starfox_font_size: 1em, $starfox_font_weight: 300, $starfox_font_color: $white) {
+  text-align: center;
+  font-size: $starfox_font_size;
+  font-weight: $starfox_font_weight;
+  color: $starfox_font_color;
 }
 
-@mixin ay-chThree(){
-
-    color:$white;
-    font-size:4em;
-    font-weight:100;
-    padding:0 0em 0 0em;
-    margin:0.5em 1.1em 0 1.1em;
-    letter-spacing: 0px;
-    border-bottom: 0.2em $white solid;
-
-
+html {
+  background-color: $white;
 }
 
-@mixin smallParagraph($pad:2.3em,$color:#{$white},$line-height:1.5em,$font-size:1em){
-            
-   
-    color:$color;
-    line-height: $line-height;
-    font-size:$font-size;
-    padding:$pad 0;
-  // text-align:center;
-    //margin: 0 0 0 0em;
-    
-    
-    
-
-
+body {
+  background-color: $white;
 }
-
-@mixin bigParagraph($color:#{$paragraph-color},$size:1.6em,$max-width:14.8em){
-
-    color: $color;
-    font-size: $size;
-    max-width: $max-width;
-    margin:auto;
-    padding:0em 0;
-    color:#{$paragraph-color};
-    text-align:center;
-    font-family: "Open Sans";
-    font-weight:100;
-
-}
-
-@mixin price_tags(){
+ h1, h2, h3, h4, h5, a, p {
+   letter-spacing: .02em;
+ }
 
 
-  font-size:0;
-}
-
-
-  
- 
-.row {
-
-background:#{$sky_color};
-margin: auto;
-
-.title-area{
-
-
-li{ 
-color:#{$sky_color};  
-border-bottom: 1px solid #{$sky_color};
-// background-image:url("../images/logo.svg");
-// background-repeat: no-repeat;
-
-
-span{ 
-font-weight:bolder;
-letter-spacing: 0.02em;
-color:#{$sky_color};
-background-image:url("../images/logo.svg");
-background-repeat: no-repeat;
-
-
-
-}
-}
-}
-
-.mobile-logo{
-
-@media #{$small-only}{           
-padding:0 0.3em 0.2em 1em;
-width:3em;
-}
-}
-
-.menu_icon{
-
-background-image: url("../images/menu_icon.svg");
-margin:0.5em 0.5em;
-background-repeat:no-repeat;
-
-
-}
-
-.top-bar-section ul li{
-
-color:#{$sky_color};
-border-bottom: 1px solid #{$sky_color};
-padding: 0.2em 0;
-
-a{
-padding-left:1.8em;
-padding-right:0;
-color:#{$sky_color};
-
-}
-}
-
-.ship img{
-
-
-
-@media #{$small-only}{
-
-display:block;
-//background-image:url("../images/ship.svg");
-background-repeat:no-repeat;
-width:12em;
-height:12em;
-margin:auto;
-
-}
-
-
-}
-
-p{
-  @media #{$medium-only}{
-
-    @include bigParagraph();
-  // margin:3em 1em 0 6em;
-
+ .columns {
+  @media #{$small-only} {
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 
-
-
-  @media #{$small-only}{
-
-    @include bigParagraph();
-
+  @media #{$medium-up} {
+    padding-left: 48px;
+    padding-right: 48px;
   }
 
+  @media #{$large-up} {
+    padding-left: 23px;
+    padding-right: 23px;
+  }
 }
 
-.button{
+/* Layout */
 
-    @media #{$small-only}{
+header {
+  @media #{$small-up} {
+    border-top: 6px solid $skyBlue;
+  }
 
-    padding:1em 1em #{$button-med} 0em;
-    display:#{$button-display};
-    margin:2em 0.2em; 
-    background:#{$button-color};
-    font-weight: 100;
-    text-align:center;
-    border-bottom: #{$button-bottom-border} 5px solid;
-    }
-
-    @media #{$medium-only}{
-    padding:1em 8em #{$button-med} 8em;
-
-
-    }
+  @media #{$medium-up} {
+    background-color: $skyBlue;
+    background-image: url('../images/header_bg.svg');
+    background-size: 170px auto;
+    background-repeat: repeat;
+    background-position: top center;
+    height: 240px;
+  }
 }
 
-.row{
-  background:white;
+nav.top-bar {
+  background-color: $dark_gray;
   
-  .to_the_moon{
+  @media #{$medium-up} {
+    text-align: center;
+    margin: 22px 48px;
+    border-radius:19px;
+  }
 
-    background:#{$price-bgcolor};
-    border-radius:5px;
-    margin:3em 0;
-   
+  @media #{$large-up} {
+    max-width: 1100px;
+    margin:1.5em auto;
+    border-radius:1em;
+
+  }
+  img{
+
+    width:2em;
+    height:2em;
+  }
+
+  .toggle-topbar {
+      margin:0.3em 0.3em;
+      
+    a {
     
-      h1{
+      background-image: url('../images/menu_icon.svg');
+      background-repeat: no-repeat;
+      background-size: 2em 3em;
+
+    
+  }
+
+  .title-area {
+      padding-left: 4em;
+
+     
+    .mobile_logo  {
+     // @include font_creator(.8em,200,$skyBlue);
+      
+      letter-spacing: .05em;
+      padding-left: 4em;
+      background-image: url("../images/logo.svg");
+      background-repeat: no-repeat;
+      background-size: 3em 2em;
+     
+     
+       span {
+        font-size: 1em;
+        font-weight: 600;
         
-        @include ay-chOne();
+      }
+    }
+  }
+}
+  .top-bar-section {
+    //center the stuff for medium/large
+    @media #{$medium-up} {
+      display: inline;
+       
+       
+    }
+      ul{
 
-        ~ h3{
-             
-            @include ay-chThree();
+      background-color: $dark_gray;
+      //padding: 0 8em;
+     
+    // margin: 0 auto;
+     display:block;
+     width:25em;
+     float:none !important;
+     font-size:3em;
+    
+        li {
+          @media #{$small-only} {
+            border-top: 1px solid $skyBlue;
             
-              ~ p{
-               
-                   @include smallParagraph();
+                     }
 
-                 }
+          :hover{
+
+            color:$skyBlue;
+          
+        &  > a {
+             
+            
+               @include font_creator(1.5em, 300, $skyBlue);
+
+              text-align:left;
+               // font-size:1em;
+            @media #{$medium-up} {
+              font-size: 4em;
+              
+              
             }
+
+          }
         }
+      }
     }
 }
-
-
-.more_deal{
-
-  background:$more_deals-color;
-  text-align:center;
-  color:$white;
-  font-size:2em;
-  font-weight:600;
-   padding:0.5em 0 0 0;
+  
 }
 
-.ufo {
+@media #{$medium-up} {
+    border-radius: 6px;
+  }
+h1.desktop_logo {
+  padding: 120px 0 16px;
+  text-align: center;
+  background-image: url('/images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: auto 155px;
+  background-position: center 5px;
 
-  font-size:0.3em;
-  background:$paragraph_font;
-  color:$footer_color;
   
+
+      @include font_creator(1.58em, 400, $dark_gray);
+
+      span {
+        font-weight: 700;
+        font-size:1em;
+      }
+  
+}
+
+.hero {
+  background-color: $skyBlue;
+  padding-bottom: 7.3%;
+
+  @media #{$medium-up} {
+    margin: 78px 48px 0 48px;
+    padding-bottom: 42px;
+    border-radius: 6px;
+  }
+
+  @media #{$large-up} {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 38px;
+    max-width: 1100px;
+    margin: 78px auto 0;
+  }
+
+  .pic {
+    background-image: url('../images/ship.svg');
+    background-size: 320px auto;
+    background-repeat: no-repeat;
+    background-position: center 0;// -18px;
+    padding-top: 19em;
+    margin-bottom: 20px;
+
+    p {
+      @include font_creator(1.85em, 300, $dark_gray);
+      span {
+        font-weight: 400;
+      }
+
+      @media #{$large-up} {
+        text-align: left;
+        font-size: 1.95em;
+        padding: 18px 25px 10px 25px;
+      }
+    }
+
+    @media #{$medium-up} {
+      background-position: center -63px;
+      margin-top: -10px;
+      padding-top: 196px;
+      margin-bottom: 7px;
+    }
+
+    @media #{$large-up} {
+      padding-top: 65px;
+      padding-right: 36%;
+      margin-top: -25px;
+      margin-right: -15px;
+      float: left;
+      background-position: right -64px;
+    }
+
+  }
+
+  .hero_action {
+    text-align: center;
+  
+    a.hero_button {
+      margin-top: 25px;
+      border-bottom: 6px solid $dark_gray;
+      
+      background:$price_tags;
+      @media #{$medium-up} {
+        width: 308px;
+      }
+
+      @media #{$large-up} {
+        float: right;
+        margin-top: -9.4%;
+      }
+    }
+  }
 
 }
-}
-  
 
-  
+.deals {
+  margin-top: 60px;
+  background-color: $white;
 
-  
+  @media #{$medium-only} {
+    margin-top: 48px;
+    // margin-left: 48px;
+    // margin-right: 48px;
+  }
 
+  .row {
+
+    @media #{$medium-only} {
+      max-width: 1185px;
+      margin: auto;
+    }
+
+    @media #{$large-up} {
+      max-width: 1146px;
+      margin: auto;
+    }
+  }
+
+  .large_deal_container {
+    margin-bottom: 60px;
+    background-color: $price_tags;
+    border-radius: 6px;
+   
+    @media #{$medium-up} {
+      margin-bottom: 50px;
+    }
+
+    @media #{$large-up} {
+      margin-bottom: 57px;
+    }
+
+    
+
+   
+    h2 {
+      @include font_creator(1.5em, 600, $white);
+
+      @media #{$small-only} {
+        padding: 20px 0;
+        border-bottom: solid 1px $dark-border;
+        box-shadow: 0px 0px 1px $white;
+      }
+
+     @media #{$large-up} {
+        padding: 20px 0;
+        border-bottom: solid 1px $dark-border;
+        box-shadow: 0px 0px 1px $white;
+     }
+
+      @media #{$medium-only} {
+        text-align: left;
+        margin-top: .2em;
+        margin-bottom: .5em;
+        font-size: 1.55em;
+      }
+    }
+
+    .number {
+      @media #{$small-only} {
+        
+        text-align:center;
+
+      }
+  
+      
+      text-align: center;
+
+      @media #{$medium-only} {
+        width: 46%;
+        float: left;
+        border-right: solid 1px $dark-border;
+      }
+    }
+
+    .deal_tags {
+      @media #{$medium-only} {
+        width: 54%;
+        float: right;
+        border-left: solid 1px $line-light;
+        padding: 65px 65px 66px 65px;
+      }
+
+      @media #{$large-up} {
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    h3 {
+      @include font_creator(4.4em, 300, $white);
+      border-bottom: solid 10px $white;
+      display: inline-block;
+
+      @media #{$small-only} {
+        margin-top: 32px;
+      }
+
+      @media #{$large-up} {
+        margin-top: 32px;
+        font-size: 4.2em;
+      }
+      
+      @media #{$medium-only} {
+        margin: 50px;
+        font-size: 4.2em;
+      }
+    }
+
+    p {
+      @include font_creator(1em, 300, $white);
+      line-height: 1.4em;
+      letter-spacing: .04em;
+
+      @media #{$small-only} {
+        padding: 40px 21%;
+      }
+
+      @media #{$large-up} {
+        padding: 40px 11%;
+      }
+
+      @media #{$medium-only} {
+        text-align: left;
+      }
+    }
+    
+    h4 {
+      @include font_creator(1em, 600, $white);
+      padding: 28px 0 20px 0;
+
+    }
+
+    .small_deal:nth-child(2) h4 {
+     // border-top: solid 1px $line-light;
+    }
+
+    h5 {
+      @include font_creator(2.6em, 300, $white);
+      line-height: .4em;
+      letter-spacing: .04em;
+      border-bottom: solid 1px $dark-border;
+      padding-bottom: 46px;
+
+    }
+
+    .jupiter {
+      
+        border-radius: 6px;
+        
+      }
+
+    }
+  }
+
+
+.more_deals_container_desktop {
+  //border-top: solid 1px $line-light;
+  //box-shadow: 0px 0px 1px $white;
  
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  text-align: center;
+  padding: 0 0 0em 0;
+
+
+  
+
+  .more_deals_desktop {
+      @include font_creator(1.5em, 300, $white);
+      line-height: 2.9em;
+      margin: 0em 1.5em 2em 1.7em;
+      
+      img{
+        text-align:center;
+        padding: 0 0em 0 1em;
+      }
+  }
+}
+
+.more_deals_container {
+  background-color: $skyBlue;
+  text-align: center;
+  padding: 21px 0;
+
+  .more_deals_mobile {
+    @include font_creator(1.6em, 600, $white);
+    line-height: 44px;
+    background-image: url('../images/arrow.svg');
+    background-repeat: no-repeat;
+    background-size: 44px auto;
+    background-position: top right;
+    padding: 5px 66px;
+  }
+}
+
+footer {
+  background-color: $dark_gray;
+
+  p {
+    @include font_creator(.9em, 300, $grey);
+    padding: 27px 85px;
+
+    @media #{$medium-only} {
+      padding: 35px 0 80px 0;
+    }
+
+    @media #{$large-up} {
+      padding: 33px 85px; 
+    }
+  }
+}
