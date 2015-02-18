@@ -7,19 +7,19 @@ $dark_gray: #2C2C2C;
 $price_tags:#666666;
 $dark-border:#434343;
 
-@mixin font_creator($starfox_font_size: 1em, $starfox_font_weight: 300, $starfox_font_color: $white) {
+@mixin font_creator($font_size, $font_weight, $font_color) {
   text-align: center;
-  font-size: $starfox_font_size;
-  font-weight: $starfox_font_weight;
-  color: $starfox_font_color;
+  font-size: $font_size;
+  font-weight: $font_weight;
+  color: $font_color;
 }
 
-html {
-  background-color: $white;
-}
+// html {
+//   background-color: $white;
+// }
 
 body {
-  background-color: $white;
+  background-color: $skyBlue;
 }
  h1, h2, h3, h4, h5, a, p {
    letter-spacing: .02em;
@@ -76,41 +76,43 @@ nav.top-bar {
   }
   img{
 
-    width:2em;
-    height:2em;
+    width:4em;
+    height:3em;
   }
 
   .toggle-topbar {
-      margin:0.3em 0.3em;
-      
+      margin:0.2em 0.5em;
+      width:3em;
+      height:1em;
     a {
     
       background-image: url('../images/menu_icon.svg');
       background-repeat: no-repeat;
-      background-size: 2em 3em;
+      background-size: 3em 3em;
 
     
   }
 
   .title-area {
-      padding-left: 4em;
-
+      padding-left: 6em;
+     
      
     .mobile_logo  {
-     // @include font_creator(.8em,200,$skyBlue);
+     
       
       letter-spacing: .05em;
       padding-left: 4em;
-      background-image: url("../images/logo.svg");
-      background-repeat: no-repeat;
-      background-size: 3em 2em;
+      width:5em;
      
-     
-       span {
-        font-size: 1em;
-        font-weight: 600;
-        
-      }
+        img{
+
+
+            a span{
+            font-size: 1em;
+            font-weight: 600;
+            color:$skyBlue;
+          }
+        }
     }
   }
 }
@@ -134,7 +136,7 @@ nav.top-bar {
     
         li {
           @media #{$small-only} {
-            border-top: 1px solid $skyBlue;
+          border-top: 1px solid $skyBlue;
             
                      }
 
