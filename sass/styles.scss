@@ -73,7 +73,6 @@ nav.top-bar {
     max-width: 1100px;
     margin:1.5em auto;
     border-radius:1em;
-
   }
   img{
 
@@ -119,7 +118,7 @@ nav.top-bar {
     //center the stuff for medium/large
     @media #{$medium-up} {
       display: inline;
-       
+      
        
     }
       ul{
@@ -127,11 +126,11 @@ nav.top-bar {
       background-color: $dark_gray;
       //padding: 0 8em;
      
-    // margin: 0 auto;
+     margin: 0 auto;
      display:block;
      width:25em;
      float:none !important;
-     font-size:3em;
+     
     
         li {
           @media #{$small-only} {
