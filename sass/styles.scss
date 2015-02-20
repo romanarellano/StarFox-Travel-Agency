@@ -14,12 +14,12 @@ $dark-border:#434343;
   color: $font_color;
 }
 
-// html {
-//   background-color: $white;
-// }
+html {
+  background-color: $white;
+}
 
 body {
-  background-color: $skyBlue;
+  background-color: $white;
 }
  h1, h2, h3, h4, h5, a, p {
    letter-spacing: .02em;
@@ -48,6 +48,7 @@ body {
 header {
   @media #{$small-up} {
     border-top: 6px solid $skyBlue;
+    background:$skyBlue;
   }
 
   @media #{$medium-up} {
@@ -76,43 +77,41 @@ nav.top-bar {
   }
   img{
 
-    width:4em;
-    height:3em;
+    width:2em;
+    height:2em;
   }
 
   .toggle-topbar {
-      margin:0.2em 0.5em;
-      width:3em;
-      height:1em;
+      margin:0.3em 0.3em;
+      
     a {
     
       background-image: url('../images/menu_icon.svg');
       background-repeat: no-repeat;
-      background-size: 3em 3em;
+      background-size: 2em 3em;
 
     
   }
 
   .title-area {
-      padding-left: 6em;
-     
+      padding-left: 4em;
+
      
     .mobile_logo  {
-     
+     // @include font_creator(.8em,200,$skyBlue);
       
       letter-spacing: .05em;
       padding-left: 4em;
-      width:5em;
+      background-image: url("../images/logo.svg");
+      background-repeat: no-repeat;
+      background-size: 3em 2em;
      
-        img{
-
-
-            a span{
-            font-size: 1em;
-            font-weight: 600;
-            color:$skyBlue;
-          }
-        }
+     
+       span {
+        font-size: 1em;
+        font-weight: 600;
+        
+      }
     }
   }
 }
@@ -125,18 +124,18 @@ nav.top-bar {
     }
       ul{
 
-     background-color: $dark_gray;
-      
+      background-color: $dark_gray;
+      //padding: 0 8em;
      
-     
+     margin: 0 auto;
      display:block;
-     
+     width:25em;
      float:none !important;
      
     
         li {
           @media #{$small-only} {
-          border-top: 1px solid $skyBlue;
+            border-top: 1px solid $skyBlue;
             
                      }
 
