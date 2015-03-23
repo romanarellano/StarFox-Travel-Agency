@@ -7,11 +7,11 @@ $dark_gray: #2C2C2C;
 $price_tags:#666666;
 $dark-border:#434343;
 
-@mixin font_creator($font_size, $font_weight, $font_color) {
+@mixin font_creator($starfox_font_size: 1em, $starfox_font_weight: 300, $starfox_font_color: $white) {
   text-align: center;
-  font-size: $font_size;
-  font-weight: $font_weight;
-  color: $font_color;
+  font-size: $starfox_font_size;
+  font-weight: $starfox_font_weight;
+  color: $starfox_font_color;
 }
 
 html {
@@ -48,7 +48,6 @@ body {
 header {
   @media #{$small-up} {
     border-top: 6px solid $skyBlue;
-    background:$skyBlue;
   }
 
   @media #{$medium-up} {
@@ -117,6 +116,7 @@ nav.top-bar {
 }
   .top-bar-section {
     //center the stuff for medium/large
+    background-color:#94C9C8;
     @media #{$medium-up} {
       display: inline;
       
@@ -215,7 +215,7 @@ h1.desktop_logo {
     p {
       @include font_creator(1.85em, 300, $dark_gray);
       span {
-        font-weight: 400;
+        font-weight: 800;
       }
 
       @media #{$large-up} {
@@ -241,6 +241,7 @@ h1.desktop_logo {
       background-position: right -64px;
     }
 
+
   }
 
   .hero_action {
@@ -249,10 +250,10 @@ h1.desktop_logo {
     a.hero_button {
       margin-top: 25px;
       border-bottom: 6px solid $dark_gray;
-      
       background:$price_tags;
+      
       @media #{$medium-up} {
-        width: 308px;
+        width: 20em;
       }
 
       @media #{$large-up} {
@@ -265,7 +266,7 @@ h1.desktop_logo {
 }
 
 .deals {
-  margin-top: 60px;
+  margin-top: 70px;
   background-color: $white;
 
   @media #{$medium-only} {
@@ -277,15 +278,15 @@ h1.desktop_logo {
   .row {
 
     @media #{$medium-only} {
-      max-width: 1185px;
+      max-width: 75em;
       margin: auto;
     }
 
     @media #{$large-up} {
-      max-width: 1146px;
+      max-width: 72em;
       margin: auto;
     }
-  }
+  
 
   .large_deal_container {
     margin-bottom: 60px;
@@ -345,34 +346,27 @@ h1.desktop_logo {
 
     .deal_tags {
       @media #{$medium-only} {
-        width: 54%;
+        width:54%;
         float: right;
         border-left: solid 1px $line-light;
+        box-shadow: 0px 0px 1px $white;
         padding: 65px 65px 66px 65px;
       }
 
-      @media #{$large-up} {
-        padding: 0;
-        margin: 0;
-      }
     }
 
     h3 {
       @include font_creator(4.4em, 300, $white);
       border-bottom: solid 10px $white;
-      display: inline-block;
+      display:inline-block;
 
       @media #{$small-only} {
         margin-top: 32px;
       }
 
-      @media #{$large-up} {
-        margin-top: 32px;
-        font-size: 4.2em;
-      }
       
-      @media #{$medium-only} {
-        margin: 50px;
+      @media #{$medium-up} {
+        margin-top: 62px;
         font-size: 4.2em;
       }
     }
@@ -397,32 +391,30 @@ h1.desktop_logo {
     
     h4 {
       @include font_creator(1em, 600, $white);
-      padding: 28px 0 20px 0;
+      padding: 26px 0 20px 0;
 
     }
 
     .small_deal:nth-child(2) h4 {
-     // border-top: solid 1px $line-light;
+      border-top: solid 1px $line-light;
     }
 
     h5 {
       @include font_creator(2.6em, 300, $white);
-      line-height: .4em;
+      line-height: .3em;
       letter-spacing: .04em;
+      //box-shadow: 0px 0px 1px $white;
       border-bottom: solid 1px $dark-border;
-      padding-bottom: 46px;
+       
+      padding-bottom: 66px;
 
     }
 
-    .jupiter {
-      
-        border-radius: 6px;
-        
-      }
+   
 
     }
   }
-
+}
 
 .more_deals_container_desktop {
   //border-top: solid 1px $line-light;
@@ -438,12 +430,12 @@ h1.desktop_logo {
 
   .more_deals_desktop {
       @include font_creator(1.5em, 300, $white);
-      line-height: 2.9em;
-      margin: 0em 1.5em 2em 1.7em;
+        line-height: 3.1em;
+        margin: 0em 1.5em 2em 1.7em;
       
       img{
-        text-align:center;
-        padding: 0 0em 0 1em;
+        
+       padding: 0 0em 0 1em;
       }
   }
 }
@@ -459,7 +451,7 @@ h1.desktop_logo {
     background-image: url('../images/arrow.svg');
     background-repeat: no-repeat;
     background-size: 44px auto;
-    background-position: top right;
+    background-position: right ;
     padding: 5px 66px;
   }
 }

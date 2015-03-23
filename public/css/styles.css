@@ -2731,8 +2731,11 @@ th.hide-for-touch {
   th.show-for-print {
     display: table-cell !important; } }
 
+html {
+  background-color: #FFFFFF; }
+
 body {
-  background-color: #94C9C8; }
+  background-color: #FFFFFF; }
 
 h1, h2, h3, h4, h5, a, p {
   letter-spacing: .02em; }
@@ -2776,47 +2779,50 @@ nav.top-bar {
       margin: 1.5em auto;
       border-radius: 1em; } }
   nav.top-bar img {
-    width: 4em;
-    height: 3em; }
+    width: 2em;
+    height: 2em; }
   nav.top-bar .toggle-topbar {
-    margin: 0.2em 0.5em;
-    width: 3em;
-    height: 1em; }
+    margin: 0.3em 0.3em; }
     nav.top-bar .toggle-topbar a {
       background-image: url('../images/menu_icon.svg');
       background-repeat: no-repeat;
-      background-size: 3em 3em; }
+      background-size: 2em 3em; }
     nav.top-bar .toggle-topbar .title-area {
-      padding-left: 6em; }
+      padding-left: 4em; }
       nav.top-bar .toggle-topbar .title-area .mobile_logo {
         letter-spacing: .05em;
         padding-left: 4em;
-        width: 5em; }
-        nav.top-bar .toggle-topbar .title-area .mobile_logo img a span {
+        background-image: url("../images/logo.svg");
+        background-repeat: no-repeat;
+        background-size: 3em 2em; }
+        nav.top-bar .toggle-topbar .title-area .mobile_logo span {
           font-size: 1em;
-          font-weight: 600;
-          color: #94C9C8; }
-  @media only screen and (min-width:871px) {
-    nav.top-bar .top-bar-section {
-      display: inline; } }
-  nav.top-bar .top-bar-section ul {
-    background-color: #2C2C2C;
-    display: block;
-    float: none !important; }
-    @media only screen and (max-width: 870px) {
-      nav.top-bar .top-bar-section ul li {
-        border-top: 1px solid #94C9C8; } }
-    nav.top-bar .top-bar-section ul li :hover {
-      color: #94C9C8; }
-      nav.top-bar .top-bar-section ul li :hover > a {
-        text-align: center;
-        font-size: 1.5em;
-        font-weight: 300;
-        color: #94C9C8;
-        text-align: left; }
-        @media only screen and (min-width:871px) {
-          nav.top-bar .top-bar-section ul li :hover > a {
-            font-size: 4em; } }
+          font-weight: 600; }
+  nav.top-bar .top-bar-section {
+    background-color: #94C9C8; }
+    @media only screen and (min-width:871px) {
+      nav.top-bar .top-bar-section {
+        display: inline; } }
+    nav.top-bar .top-bar-section ul {
+      background-color: #2C2C2C;
+      margin: 0 auto;
+      display: block;
+      width: 25em;
+      float: none !important; }
+      @media only screen and (max-width: 870px) {
+        nav.top-bar .top-bar-section ul li {
+          border-top: 1px solid #94C9C8; } }
+      nav.top-bar .top-bar-section ul li :hover {
+        color: #94C9C8; }
+        nav.top-bar .top-bar-section ul li :hover > a {
+          text-align: center;
+          font-size: 1.5em;
+          font-weight: 300;
+          color: #94C9C8;
+          text-align: left; }
+          @media only screen and (min-width:871px) {
+            nav.top-bar .top-bar-section ul li :hover > a {
+              font-size: 4em; } }
 
 @media only screen and (min-width:871px) {
   border-radius: 6px; }
@@ -2864,7 +2870,7 @@ h1.desktop_logo {
       font-weight: 300;
       color: #2C2C2C; }
       .hero .pic p span {
-        font-weight: 400; }
+        font-weight: 800; }
       @media only screen and (min-width:1201px) {
         .hero .pic p {
           text-align: left;
@@ -2892,78 +2898,75 @@ h1.desktop_logo {
       background: #666666; }
       @media only screen and (min-width:871px) {
         .hero .hero_action a.hero_button {
-          width: 308px; } }
+          width: 20em; } }
       @media only screen and (min-width:1201px) {
         .hero .hero_action a.hero_button {
           float: right;
           margin-top: -9.4%; } }
 
 .deals {
-  margin-top: 60px;
+  margin-top: 70px;
   background-color: #FFFFFF; }
   @media only screen and (min-width:871px) and (max-width:1200px) {
     .deals {
       margin-top: 48px; } }
   @media only screen and (min-width:871px) and (max-width:1200px) {
     .deals .row {
-      max-width: 1185px;
+      max-width: 75em;
       margin: auto; } }
   @media only screen and (min-width:1201px) {
     .deals .row {
-      max-width: 1146px;
+      max-width: 72em;
       margin: auto; } }
-  .deals .large_deal_container {
+  .deals .row .large_deal_container {
     margin-bottom: 60px;
     background-color: #666666;
     border-radius: 6px; }
     @media only screen and (min-width:871px) {
-      .deals .large_deal_container {
+      .deals .row .large_deal_container {
         margin-bottom: 50px; } }
     @media only screen and (min-width:1201px) {
-      .deals .large_deal_container {
+      .deals .row .large_deal_container {
         margin-bottom: 57px; } }
-    .deals .large_deal_container h2 {
+    .deals .row .large_deal_container h2 {
       text-align: center;
       font-size: 1.5em;
       font-weight: 600;
       color: #FFFFFF; }
       @media only screen and (max-width: 870px) {
-        .deals .large_deal_container h2 {
+        .deals .row .large_deal_container h2 {
           padding: 20px 0;
           border-bottom: solid 1px #434343;
           box-shadow: 0px 0px 1px #FFFFFF; } }
       @media only screen and (min-width:1201px) {
-        .deals .large_deal_container h2 {
+        .deals .row .large_deal_container h2 {
           padding: 20px 0;
           border-bottom: solid 1px #434343;
           box-shadow: 0px 0px 1px #FFFFFF; } }
       @media only screen and (min-width:871px) and (max-width:1200px) {
-        .deals .large_deal_container h2 {
+        .deals .row .large_deal_container h2 {
           text-align: left;
           margin-top: .2em;
           margin-bottom: .5em;
           font-size: 1.55em; } }
-    .deals .large_deal_container .number {
+    .deals .row .large_deal_container .number {
       text-align: center; }
       @media only screen and (max-width: 870px) {
-        .deals .large_deal_container .number {
+        .deals .row .large_deal_container .number {
           text-align: center; } }
       @media only screen and (min-width:871px) and (max-width:1200px) {
-        .deals .large_deal_container .number {
+        .deals .row .large_deal_container .number {
           width: 46%;
           float: left;
           border-right: solid 1px #434343; } }
     @media only screen and (min-width:871px) and (max-width:1200px) {
-      .deals .large_deal_container .deal_tags {
+      .deals .row .large_deal_container .deal_tags {
         width: 54%;
         float: right;
         border-left: solid 1px #6F6F6F;
+        box-shadow: 0px 0px 1px #FFFFFF;
         padding: 65px 65px 66px 65px; } }
-    @media only screen and (min-width:1201px) {
-      .deals .large_deal_container .deal_tags {
-        padding: 0;
-        margin: 0; } }
-    .deals .large_deal_container h3 {
+    .deals .row .large_deal_container h3 {
       text-align: center;
       font-size: 4.4em;
       font-weight: 300;
@@ -2971,17 +2974,13 @@ h1.desktop_logo {
       border-bottom: solid 10px #FFFFFF;
       display: inline-block; }
       @media only screen and (max-width: 870px) {
-        .deals .large_deal_container h3 {
+        .deals .row .large_deal_container h3 {
           margin-top: 32px; } }
-      @media only screen and (min-width:1201px) {
-        .deals .large_deal_container h3 {
-          margin-top: 32px;
+      @media only screen and (min-width:871px) {
+        .deals .row .large_deal_container h3 {
+          margin-top: 62px;
           font-size: 4.2em; } }
-      @media only screen and (min-width:871px) and (max-width:1200px) {
-        .deals .large_deal_container h3 {
-          margin: 50px;
-          font-size: 4.2em; } }
-    .deals .large_deal_container p {
+    .deals .row .large_deal_container p {
       text-align: center;
       font-size: 1em;
       font-weight: 300;
@@ -2989,31 +2988,31 @@ h1.desktop_logo {
       line-height: 1.4em;
       letter-spacing: .04em; }
       @media only screen and (max-width: 870px) {
-        .deals .large_deal_container p {
+        .deals .row .large_deal_container p {
           padding: 40px 21%; } }
       @media only screen and (min-width:1201px) {
-        .deals .large_deal_container p {
+        .deals .row .large_deal_container p {
           padding: 40px 11%; } }
       @media only screen and (min-width:871px) and (max-width:1200px) {
-        .deals .large_deal_container p {
+        .deals .row .large_deal_container p {
           text-align: left; } }
-    .deals .large_deal_container h4 {
+    .deals .row .large_deal_container h4 {
       text-align: center;
       font-size: 1em;
       font-weight: 600;
       color: #FFFFFF;
-      padding: 28px 0 20px 0; }
-    .deals .large_deal_container h5 {
+      padding: 26px 0 20px 0; }
+    .deals .row .large_deal_container .small_deal:nth-child(2) h4 {
+      border-top: solid 1px #6F6F6F; }
+    .deals .row .large_deal_container h5 {
       text-align: center;
       font-size: 2.6em;
       font-weight: 300;
       color: #FFFFFF;
-      line-height: .4em;
+      line-height: .3em;
       letter-spacing: .04em;
       border-bottom: solid 1px #434343;
-      padding-bottom: 46px; }
-    .deals .large_deal_container .jupiter {
-      border-radius: 6px; }
+      padding-bottom: 66px; }
 
 .more_deals_container_desktop {
   border-bottom-left-radius: 6px;
@@ -3025,10 +3024,9 @@ h1.desktop_logo {
     font-size: 1.5em;
     font-weight: 300;
     color: #FFFFFF;
-    line-height: 2.9em;
+    line-height: 3.1em;
     margin: 0em 1.5em 2em 1.7em; }
     .more_deals_container_desktop .more_deals_desktop img {
-      text-align: center;
       padding: 0 0em 0 1em; }
 
 .more_deals_container {
@@ -3044,7 +3042,7 @@ h1.desktop_logo {
     background-image: url('../images/arrow.svg');
     background-repeat: no-repeat;
     background-size: 44px auto;
-    background-position: top right;
+    background-position: right;
     padding: 5px 66px; }
 
 footer {
